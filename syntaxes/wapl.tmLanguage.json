@@ -1,0 +1,187 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "wapl",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#characters"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#specialOperators"
+		},
+		{
+			"include": "#special"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#brackets"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.wapl",
+					"match": "//.*$"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.wapl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.wapl",
+					"match": "\\\\."
+				}
+			]
+		},
+		"characters": {
+			"patterns": [
+				{
+					"name": "string.quoted.single.wapl",
+					"begin": "'",
+					"end": "'"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.wapl",
+					"match": "\\b(fn|if|loopif|point|warpto|warptoif|return|use|struct|declare)\\b"
+				}
+			]
+		},
+		"specialOperators": {
+			"patterns": [
+				{
+					"name": "keyword.special.wapl",
+					"match": "(#=|=|&_|\\*_|pmove|p&|p&mut)"
+				}
+			]
+		},
+		"special": {
+			"patterns": [
+				{
+					"name": "variable.other.special.wapl",
+					"match": "\\b(this|super|self|break-|continue-)\\b"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.wapl",
+					"match": "\\b[0-9]+\\b"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.wapl",
+					"match": "\\b[\\p{L}\\p{N}_#?@]+(?=\\()",
+					"captures": {
+						"0": {
+							"name": "entity.name.function.wapl"
+						}
+					}
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.other.wapl",
+					"match": "\\b[\\p{L}\\p{N}_#?@]+\\b"
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "storage.type.ptr.wapl",
+					"match": "\\b(ptr:)([^\\s]+)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.type.ptr.prefix.wapl"
+						},
+						"2": {
+							"name": "support.type.wapl"
+						}
+					}
+				},
+				{
+					"name": "storage.type.star.wapl",
+					"match": "(\\*:)([^\\s]+)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.type.star.prefix.wapl"
+						},
+						"2": {
+							"name": "support.type.wapl"
+						}
+					}
+				},
+				{
+					"name": "storage.type.ref.wapl",
+					"match": "(&:)([^\\s]+)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.type.ref.prefix.wapl"
+						},
+						"2": {
+							"name": "support.type.wapl"
+						}
+					}
+				},
+				{
+					"name": "storage.type.refmut.wapl",
+					"match": "(&mut:)([^\\s]+)\\b",
+					"captures": {
+						"1": {
+							"name": "storage.type.refmut.prefix.wapl"
+						},
+						"2": {
+							"name": "support.type.wapl"
+						}
+					}
+				},
+				{
+					"name": "support.type.wapl",
+					"match": "\\b(i32|i64|f32|f64|bool|char|String|T)\\b"
+				}
+			]
+		},
+		"brackets": {
+			"patterns": [
+				{
+					"name": "punctuation.section.brackets.wapl",
+					"match": "[\\[\\]\\(\\)\\{\\}]"
+				}
+			]
+		}
+	},
+	"scopeName": "source.wapl"
+}

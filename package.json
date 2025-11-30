@@ -1,0 +1,25 @@
+{
+  "name": "wapl-syntax",
+  "displayName": "wapl-syntax",
+  "description": "Syntax highlighting for the WapL programming language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.106.1"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "wapl",
+      "aliases": ["wapl", "wapl"],
+      "extensions": [".wapl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "wapl",
+      "scopeName": "source.wapl",
+      "path": "./syntaxes/wapl.tmLanguage.json"
+    }]
+  }
+}
