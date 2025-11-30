@@ -10,16 +10,29 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "wapl",
-      "aliases": ["wapl", "wapl"],
-      "extensions": [".wapl"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "wapl",
-      "scopeName": "source.wapl",
-      "path": "./syntaxes/wapl.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "wapl",
+        "aliases": [
+          "wapl",
+          "wapl"
+        ],
+        "extensions": [
+          ".wapl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "wapl",
+        "scopeName": "source.wapl",
+        "path": "./syntaxes/wapl.tmLanguage.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kazanefu/WapL_SyntaxHighLight"
   }
 }
