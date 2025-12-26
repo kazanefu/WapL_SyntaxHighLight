@@ -2,7 +2,7 @@
   "name": "wapl-syntax",
   "displayName": "wapl-syntax",
   "description": "Syntax highlighting for the WapL programming language",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.106.1"
   },
